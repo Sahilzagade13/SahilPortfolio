@@ -80,7 +80,17 @@
     margin: 8px auto 0;      /* center underline */
     border-radius: 2px;
 }
-
+/* Center text inside skill boxes */
+.box,
+.skill-card {
+  display: flex;               /* make the element a flex container */
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center */
+  text-align: center;          /* center multi-line text */
+  min-height: 120px;           /* control box height (adjust as needed) */
+  padding: 20px;               /* keep inner spacing */
+  white-space: normal;         /* allow text to wrap */
+}
         .hero {
             height: 100vh;
             display: flex;
@@ -487,6 +497,7 @@
     </script>
 </body>
 </html>
+
 
 
 
