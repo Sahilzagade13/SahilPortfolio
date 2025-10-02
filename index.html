@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Zagade - Video Editor Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --dark-bg: #121212;
+            --light-bg: #1E1E1E;
+            --text-color: #EAEAEA;
+            --text-secondary: #A0A0A0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* HERO */
+        .skills h3,
+.experience h3 {
+    text-align: center;      /* Center the heading */
+    font-size: 2rem;         /* Adjust font size if needed */
+    margin-bottom: 25px;     /* Add some spacing below */
+    position: relative;
+    color: var(--primary-color);
+}
+
+.skills h3::after,
+.experience h3::after {
+    content: '';
+    display: block;
+    width: 60px;             /* underline width */
+    height: 3px;             /* underline height */
+    background-color: var(--primary-color);
+    margin: 8px auto 0;      /* center underline */
+    border-radius: 2px;
+}
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(18,18,18,0.7), rgba(18,18,18,0.7)),
+                        url('https://images.unsplash.com/photo-1574717547378-5413EE546412?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        .cta-button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+       /* PORTFOLIO */
+   /* MY WORK (Portfolio Section) */
+.section-header {
+  margin-bottom: 40px;
+  text-align: center;
+} 
+.section-header h2 {
+  font-size: 28px;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Box Grid */
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+.box {
+  background: #555555;        /* Normal grey */
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.box:hover {
+  background: var(--primary-color); /* Blue on hover */
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+
+        /* ABOUT / SUMMARY */
+        .summary-card {
+            background: #1E1E1E;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .skill-card {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-color);
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item .year {
+            position: absolute;
+            left: -120px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .timeline-item .content {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .timeline-item .content:hover {
+            transform: scale(1.02);
+        }
+
+        /* EDUCATION & ACHIEVEMENTS */
+        .edu-achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .edu, .achievements {
+            flex: 1 1 45%;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .edu ul, .achievements ul {
+            padding-left: 20px;
+        }
+        .edu ul li, .achievements ul li {
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--light-bg);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            margin: 0 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .timeline-item .year {
+                position: static;
+                display: block;
+                margin-bottom: 5px;
+            }
+            .edu-achievements {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1>SAHIL ZAGADE</h1>
+        <p>Professional Video Editor for Dynamic Brands</p>
+        <a href="#portfolio" class="cta-button">View My Work</a>
+    </header>
+
+   <!-- PORTFOLIO / MY WORK -->
+<section id="portfolio" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <h2>My Work</h2>
+    </div>
+
+<div class="box-grid">
+  <a href="https://drive.google.com/drive/folders/1TOPh_3n-92xdru9l5_Wi8npZ1zbcZCN8" class="box" target="_blank">Ads</a>
+  <a href="https://drive.google.com/drive/folders/1FEBcAFHr15zXWyn_QB9HT2-M58bhXQyK" class="box" target="_blank">Logo</a>
+  <a href="https://drive.google.com/drive/folders/1Px8pON1ZwREnUv-vehuSm5lYz0dC-4kr" class="box" target="_blank">Reels</a>
+  <a href="https://drive.google.com/drive/folders/1KtQhupCVYY01JutQidXzxo5yHX-y6BHP" class="box" target="_blank">Sports Reels</a>
+  <a href="https://drive.google.com/drive/folders/1-nEBnGyPnSL3yLBZEknLAUkHnFg1ZwIv" class="box" target="_blank">YouTube</a>
+  <a href="https://drive.google.com/drive/folders/1kR00GWO4kr5z9hQP5tUJE64LwC5R_DoF" class="box" target="_blank">YT Promo</a>
+  <a href="https://drive.google.com/drive/folders/1GBwnPn2tGfz0kjHlUWdk5s_xp7SWGYDU" class="box" target="_blank">2D Animation</a>
+  <a href="https://drive.google.com/drive/folders/1ohhpfCDm80H5fm3xlhpORVaOS0YKItzf" class="box" target="_blank">Social Media Post</a>
+  
+</div>
+
+  </div>
+</section>
+
+
+    <!-- ABOUT / PROFESSIONAL SUMMARY -->
+    <section id="about" class="reveal">
+        <div class="container">
+            <h2>About Me</h2>
+
+            <!-- Professional Summary -->
+            <div class="summary-card">
+                <h3>Professional Summary</h3>
+                <p>
+                    Creative and detail-oriented <strong>Senior 2D Animator and Motion Graphics Artist</strong> with 
+                    7+ years of professional experience in animation, video editing, and post-production. Skilled at 
+                    blending storytelling with technical expertise to deliver impactful visuals across education, 
+                    trading, corporate, and entertainment sectors. Proven record of creating high-engagement digital 
+                    content that drives brand growth.
+                </p>
+            </div>
+
+            <!-- Core Skills -->
+            <div class="skills">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">🎬 2D Animation & Motion Design</div>
+                    <div class="skill-card">🎨 Kinetic Typography</div>
+                    <div class="skill-card">✂️ Video Editing & Compositing</div>
+                    <div class="skill-card">🎞️ Storyboarding & Color Grading</div>
+                    <div class="skill-card">💻 Adobe Suite (AE, PR, PS, AI)</div>
+                    <div class="skill-card">📢 Brand Communication</div>
+                    <div class="skill-card">👥 Mentoring & Team Leadership</div>
+                    <div class="skill-card">🤝 Client Collaboration</div>
+                </div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="experience">
+                <h3>Professional Experience</h3>
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="year">2025 – Present</span>
+                        <div class="content">
+                            <h4>Vann Ventures (Balvaya / OneLife)</h4>
+                            <p>Senior Motion Graphics Designer & Video Editor</p>
+                            <ul>
+                                <li>Lead video editing and creative production for luxury and lifestyle brands.</li>
+                                <li>Executed AI generative work using MidJourney, Kling, Runway.</li>
+                                <li>Guided junior creatives and ensured innovative brand visuals.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">2022 – 2024</span>
+                        <div class="content">
+                            <h4>Asmita Patel Global School of Trading</h4>
+                            <p>Senior Motion Graphics Designer & Video Editor</p>
+                            <ul>
+                                <li>Produced reels & explainer videos for finance education.</li>
+                                <li>Boosted digital engagement with visually impactful content.</li>
+                                <li>Mentored interns and improved overall design output.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">2021 – 2022</span>
+                        <div class="content">
+                            <h4>Chandel Productions</h4>
+                            <p>Senior 2D Animator & Video Editor</p>
+                            <ul>
+                                <li>Edited corporate & promotional videos with motion graphics.</li>
+                                <li>Delivered polished content to high-profile clients.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">2020</span>
+                        <div class="content">
+                            <h4>Maya Digital Studio</h4>
+                            <p>2D Animator</p>
+                            <ul>
+                                <li>Created broadcast-quality 2D animations with character consistency.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">2016 – 2019</span>
+                        <div class="content">
+                            <h4>Earlier Roles</h4>
+                            <p>Animator & Video Editor</p>
+                            <ul>
+                                <li>Worked with Jaro Education, Shezar Edbox, Ruffline Animation, etc.</li>
+                                <li>Specialized in educational animations and explainer videos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Education & Achievements -->
+            <div class="edu-achievements">
+                <div class="edu">
+                    <h3>Education & Certifications</h3>
+                    <ul>
+                        <li>Certified in MS-CIT (Word, PowerPoint, Paint, Internet)</li>
+                        <li>Advanced Adobe Creative Suite Training</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>Delivered 100+ projects across corporate, entertainment, education sectors.</li>
+                        <li>Recognized as a creative problem-solver ensuring both speed and quality.</li>
+                        <li>School-level sports winner – leadership, discipline, teamwork.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Ready to start your next project? Let's talk.</p>
+            <p><strong>sahilzagade13@gmail.com</strong></p>
+            <p><strong>9004128678</strong></p>
+           
+            <p class="copyright">&copy; 2025 Sahil Zagade. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.2 });
+
+        reveals.forEach(r => appearOnScroll.observe(r));
+    </script>
+</body>
+</html>
